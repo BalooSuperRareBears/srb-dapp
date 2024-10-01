@@ -11,7 +11,7 @@ export const Home = () => {
               <div>
                 <h1>SRB LABS dApp</h1>
                 <p className='text-gray-400'>
-                  The the gateway to the {' '}
+                  The gateway to the {' '}
                   <br className='hidden xl:block' />
                   <a
                     href='https://superrarebears.com/'
