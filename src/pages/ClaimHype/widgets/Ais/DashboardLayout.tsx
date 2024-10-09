@@ -14,13 +14,30 @@ export const DashboardLayout = () => {
     network: { apiAddress }
   } = useGetNetworkConfig();
 
+  const [countClaims, setCountClaims] = useState(0);
   const [canClaim, setCanClaim] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [wasClicked, setWasClicked] = useState(false);
 
   useEffect(() => {
     checkUserClaim();
+    getCountClaims();
   }, []);
+
+  const getCountClaims = async () => {
+    await axios
+      .get(
+        `${apiAddress}/accounts/${contractAddressClaimHype}/transactions?sender=${address}&status=success&function=claim&after=1728491834`,
+      )
+      .then((response) => {
+        if (response?.data) {
+          setCountClaims(response.data.length);
+        }
+      })
+      .catch(() => {
+        setCountClaims(0);
+      });
+  }
 
   const checkUserClaim = async () => {
     try {
@@ -78,10 +95,11 @@ export const DashboardLayout = () => {
             <div className='card-body p-1'>
               <div className='card border-0 bg-primary'>
                 <div className='card-body text-center p-4'>
+                  <p className='text-white'>You have <b>{countClaims}</b> claims!</p>
                   <div className='div-container'>
-                    <img src='/claim-hype.png'
+                    <img src='/claim-hype-faucet.png'
                          style={{ marginLeft: 'auto', marginRight: 'auto' }}
-                         alt='claim-hype'>
+                         alt='claim-hype-faucet'>
                     </img>
                     {canClaim && !isLoading ? (
                       <Button
@@ -94,8 +112,7 @@ export const DashboardLayout = () => {
                       </Button>
                     ) : (
                       <p className='div-center-text'>
-                        Well done!<br />
-                        You claimed already this epoch.
+                        You claimed this epoch.
                       </p>)}
                   </div>
                 </div>
