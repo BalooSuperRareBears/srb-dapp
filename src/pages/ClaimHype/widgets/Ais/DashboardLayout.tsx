@@ -87,7 +87,7 @@ export const DashboardLayout = () => {
                       <Button
                         onClick={sendTransaction}
                         className='div-center-button'
-                        disabled={!wasClicked}
+                        disabled={wasClicked}
                       >
                         <FontAwesomeIcon icon={faDungeon} className="mr-1" />
                         CLAIM
