@@ -13,7 +13,7 @@ const WIDGETS: WidgetType[] = [
     reference: 'https://docs.multiversx.com/sdk-and-tools/sdk-dapp/#account'
   },
   {
-    title: 'Claim $HYPE',
+    title: 'Claim $HYPE and qualify for SRB airdrop',
     widget: DashboardLayout,
     description:
       'Claim daily $HYPE: 1 claim/epoch',
