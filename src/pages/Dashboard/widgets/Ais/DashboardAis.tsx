@@ -11,15 +11,19 @@ export const DashboardAis = () => {
             <div className='card-body p-1'>
               <div className='card border-0 bg-primary'>
                 <div className='card-body text-center p-4'>
+                  <img src='/ais.jpg'
+                       style={{ width: '100%', height: '40%', marginLeft: 'auto', marginRight: 'auto' }}
+                       alt="ais">
+                  </img>
                   <button
                     type='button'
-                    className='special-button justify-content-center'
+                    className='special-button justify-content-center mt-5'
                   >
                     <MxLink
                       className='flex items-center justify-between'
                       to={RouteNamesEnum.ais}
                     >
-                      Go to AIS page
+                      Access AIS
                     </MxLink>
                   </button>
                 </div>
