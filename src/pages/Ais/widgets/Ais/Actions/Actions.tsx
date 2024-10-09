@@ -31,7 +31,7 @@ export const Actions = () => {
 
   const checkIsFinished = async () => {
     // The data/time we want to count down to
-    const countDownDate = new Date('October 3, 2024 16:00:00').getTime();
+    const countDownDate = new Date('October 10, 2024 16:00:00').getTime();
 
     const now = new Date().getTime();
     const timezone = new Date().getTimezoneOffset();
@@ -53,7 +53,7 @@ export const Actions = () => {
         .get(
           '/accounts/' +
           contractAddress +
-          '/transactions/count?status=success&after=1727788806&sender=' +
+          '/transactions/count?status=success&after=1728486127&sender=' +
           address,
           {
             baseURL: apiAddress
