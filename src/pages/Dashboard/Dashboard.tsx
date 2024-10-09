@@ -22,7 +22,7 @@ const WIDGETS: WidgetType[] = [
       ''
   },
   {
-    title: 'Claim HYPE',
+    title: 'Claim HYPE and qualify for SRB airdrop',
     widget: DashboardClaimHype,
     description:
       '1 claim/epoch',
