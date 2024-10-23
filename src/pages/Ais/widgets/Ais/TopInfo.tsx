@@ -6,7 +6,7 @@ export const TopInfo = () => {
   const { address, account } = useGetAccountInfo();
 
   // The data/time we want to count down to
-  const countDownDate = new Date('October 17, 2024 16:00:00').getTime();
+  const countDownDate = new Date('October 24, 2024 16:00:00').getTime();
 
   // Run myfunc every second
   const myfunc = setInterval(function () {
